@@ -1,0 +1,653 @@
+<title>Ivonne Zavala</title>
+<meta name="description" content="Ivonne Zavala is a theoretical cosmologist at Swansea University working on string cosmology, string phenomenology, dark energy, dark matter and primordial gravitational waves.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Young+Serif&display=swap">
+<style>
+/* Layout: narrow left rail with section names, content on the right; stacks to one column on phones.
+   Accent is rosa mexicano, used for the name, links and the chirp; a cool blue marks observations. */
+:root {
+  --bg: #F6F6F9;
+  --surface: #FFFFFF;
+  --ink: #16182B;
+  --muted: #595C74;
+  --line: #DDDEE8;
+  --accent: #B3105F;
+  --accent-soft: #FBE4EF;
+  --cool: #2747A8;
+  --cool-soft: #E4EAFA;
+  --font-display: "Young Serif", Georgia, "Times New Roman", serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --step--1: 0.82rem;
+  --step-0: 1rem;
+  --step-1: 1.2rem;
+  --step-2: 1.55rem;
+  --step-3: 2.1rem;
+  --step-4: clamp(2.6rem, 6vw, 4.2rem);
+  --rail: 11rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0F1020; --surface: #171A31; --ink: #E9E9F3; --muted: #A4A7C0; --line: #2C2F4C;
+    --accent: #FF63AC; --accent-soft: #3B1630; --cool: #93AAFF; --cool-soft: #1B2449;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0F1020; --surface: #171A31; --ink: #E9E9F3; --muted: #A4A7C0; --line: #2C2F4C;
+  --accent: #FF63AC; --accent-soft: #3B1630; --cool: #93AAFF; --cool-soft: #1B2449;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: var(--step-0); line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+h1, h2, h3, h4, h5 { text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.wrap { max-width: 70rem; margin: 0 auto; padding-inline: 20px; }
+.skip { position: absolute; left: -999px; top: 0; }
+.skip:focus { left: 16px; top: 8px; background: var(--surface); padding: 6px 10px; z-index: 10; }
+
+/* Top bar */
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+.bar .wrap { display: flex; align-items: center; gap: 1.5rem; min-height: 3.6rem; }
+.bar-name { font-family: var(--font-display); font-size: 1.1rem; color: var(--ink); text-decoration: none; white-space: nowrap; }
+.bar nav { flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.bar nav::-webkit-scrollbar { display: none; }
+.bar ul { list-style: none; display: flex; gap: 1.25rem; margin: 0; padding: 0; justify-content: flex-end; }
+.bar nav a { color: var(--muted); text-decoration: none; font-size: 0.92rem; white-space: nowrap; padding-block: 0.4rem; display: inline-block; }
+.bar nav a:hover { color: var(--accent); }
+
+/* Hero */
+.hero { padding-block: 3.5rem 2.5rem; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 22rem; gap: 3rem; align-items: start; }
+.eyebrow { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.hero h1 { font-family: var(--font-display); font-weight: 400; font-size: var(--step-4); line-height: 1.02; margin-top: 0.6rem; letter-spacing: -0.01em; }
+.chirp { display: block; width: 100%; max-width: 35rem; height: auto; margin-top: 1rem; }
+.chirp path { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linejoin: round; }
+.lede { font-size: var(--step-1); line-height: 1.55; max-width: 38rem; margin-top: 1.4rem; }
+.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; list-style: none; padding: 0; margin: 1.4rem 0 0; }
+.tags li { font-size: 0.85rem; border: 1px solid var(--line); background: var(--surface); padding: 0.2rem 0.7rem; border-radius: 999px; color: var(--muted); }
+.tags li.key { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+.cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.8rem; }
+.btn { display: inline-block; padding: 0.55rem 1.1rem; border-radius: 6px; font-weight: 500; text-decoration: none; font-size: 0.95rem; }
+.btn.primary { background: var(--accent); color: var(--bg); }
+.btn.ghost { border: 1px solid var(--line); color: var(--ink); background: var(--surface); }
+.btn:hover { filter: brightness(1.06); }
+.news {
+  margin-top: 2rem; max-width: 40rem; display: grid; grid-template-columns: auto minmax(0,1fr); gap: 0.6rem 1rem;
+  border-left: 3px solid var(--accent); padding: 0.2rem 0 0.2rem 1rem;
+}
+.news .when { font-family: var(--font-mono); font-size: var(--step--1); color: var(--accent); padding-top: 0.15rem; }
+.news p { font-size: 0.95rem; }
+
+/* Photo placeholders: replace the .photo-slot div with <img src="..."> when photos arrive */
+.portrait { margin: 0; }
+.photo-slot {
+  aspect-ratio: 4 / 5; max-width: 100%; border-radius: 10px; border: 1px dashed var(--muted);
+  display: grid; place-items: center; text-align: center; color: var(--muted); font-size: 0.85rem; padding: 1rem;
+  background:
+    radial-gradient(circle at 30% 25%, var(--accent-soft), transparent 60%),
+    radial-gradient(circle at 75% 80%, var(--cool-soft), transparent 55%), var(--surface);
+}
+.photo-slot b { display: block; font-family: var(--font-display); font-weight: 400; font-size: 3rem; color: var(--ink); line-height: 1; margin-bottom: 0.5rem; }
+.collage { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; max-width: 100%; }
+.collage img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+.collage img:first-child { grid-column: 1 / -1; aspect-ratio: 5 / 3; }
+.photo-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; max-width: 46rem; }
+.photo-row img.wide { grid-column: 1 / -1; aspect-ratio: 2 / 1; }
+.photo-row img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 8px; }
+.beyond { display: grid; grid-template-columns: minmax(0, 1fr) 24rem; gap: 2rem 3rem; align-items: start; max-width: 60rem; }
+.beyond-photos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.6rem; margin: 0; }
+.beyond-photos img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 8px; }
+.beyond-photos figcaption { grid-column: 1 / -1; font-size: var(--step--1); color: var(--muted); }
+.portrait figcaption { font-size: var(--step--1); color: var(--muted); margin-top: 0.6rem; }
+
+/* Sections */
+section.block { padding-block: 3.25rem; border-top: 1px solid var(--line); }
+section.block > .wrap { display: grid; grid-template-columns: var(--rail) minmax(0, 1fr); gap: 2.5rem; }
+.rail h2 { font-family: var(--font-display); font-weight: 400; font-size: var(--step-2); line-height: 1.15; position: sticky; top: 5rem; }
+.body { min-width: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+.body > * { min-width: 0; }
+.prose { max-width: 40rem; display: grid; gap: 1rem; }
+.prose p { font-size: 1.04rem; }
+h3.sub-h { font-family: var(--font-mono); font-weight: 500; font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.75rem; }
+
+/* Timelines (positions, talks, teaching) */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.7rem; max-width: 46rem; }
+.timeline li { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 1rem; }
+.timeline .when { font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted); padding-top: 0.15rem; font-variant-numeric: tabular-nums; }
+.timeline .what b { font-weight: 600; }
+.timeline .where { display: block; color: var(--muted); font-size: 0.93rem; }
+.two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; }
+
+.collabs { display: flex; flex-wrap: wrap; gap: 0.6rem; list-style: none; padding: 0; margin: 0; }
+.collabs li { border: 1px solid var(--line); background: var(--surface); border-radius: 6px; padding: 0.45rem 0.8rem; font-size: 0.9rem; }
+.collabs a { color: var(--ink); text-decoration-color: var(--line); }
+.collabs a:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.collabs li span { color: var(--muted); font-family: var(--font-mono); font-size: 0.75rem; margin-left: 0.35rem; }
+
+/* Research diagram */
+.figure { margin: 0; }
+.diagram-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--surface); }
+.diagram { display: block; width: 100%; min-width: 640px; height: auto; }
+.diagram text { font-family: var(--font-body); }
+.diagram .t-display { font-family: var(--font-display); fill: var(--ink); }
+.diagram .t-ink { fill: var(--ink); }
+.diagram .t-muted { fill: var(--muted); }
+.diagram .t-accent { fill: var(--accent); }
+.diagram .t-cool { fill: var(--cool); }
+.diagram .theory { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.2; }
+.diagram .node { fill: var(--bg); stroke: var(--ink); stroke-width: 1; }
+.diagram .obs { fill: var(--cool-soft); stroke: var(--cool); stroke-width: 1; }
+.diagram .band { fill: var(--cool); opacity: 0.85; }
+.diagram .wire { stroke: var(--muted); stroke-width: 1.3; fill: none; }
+.diagram .wire-accent { stroke: var(--accent); stroke-width: 1.3; fill: none; }
+.diagram .axis { stroke: var(--muted); stroke-width: 1; fill: none; }
+.diagram .tick { stroke: var(--muted); stroke-width: 1; }
+.diagram .torus { fill: none; stroke: var(--accent); stroke-width: 1.2; }
+.diagram .head-muted { fill: var(--muted); }
+.diagram .head-accent { fill: var(--accent); }
+.figure figcaption { font-size: 0.88rem; color: var(--muted); margin-top: 0.6rem; max-width: 46rem; }
+
+/* Research themes */
+.themes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; align-items: start; }
+.theme.wide { grid-column: 1 / -1; }
+.theme.wide .subs { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem 2rem; }
+
+.theme { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 1.4rem 1.4rem 1rem; display: flex; flex-direction: column; gap: 1rem; min-width: 0; }
+.theme-head h3 { font-family: var(--font-display); font-weight: 400; font-size: var(--step-2); line-height: 1.15; }
+.theme-head h3 { color: var(--accent); }
+.theme-q { color: var(--muted); font-style: italic; margin-top: 0.35rem; }
+.subs { display: grid; gap: 0.9rem; }
+.sub h4 { font-size: 0.98rem; font-weight: 600; }
+.sub p { font-size: 0.93rem; color: var(--muted); margin-top: 0.15rem; }
+.theme-papers { border-top: 1px solid var(--line); padding-top: 0.7rem; margin-top: auto; }
+.theme-papers summary { cursor: pointer; font-weight: 500; color: var(--accent); list-style-position: outside; padding-block: 0.2rem; }
+.theme-papers .count { font-family: var(--font-mono); font-size: 0.78rem; color: var(--muted); margin-left: 0.3rem; }
+.theme-papers h5 { font-family: var(--font-mono); font-weight: 500; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin: 1rem 0 0.5rem; }
+.papers { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.8rem; }
+.paper { display: grid; gap: 0.1rem; }
+.paper-title { font-weight: 500; color: var(--ink); text-decoration-color: var(--line); }
+.paper-title:hover { color: var(--accent); text-decoration-color: var(--accent); }
+.paper-auth { font-size: 0.85rem; color: var(--muted); }
+.paper-auth strong { color: var(--ink); font-weight: 600; }
+.paper-ref { font-size: 0.82rem; color: var(--muted); }
+.paper-id { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent); margin-left: 0.35rem; }
+.pubs-links { display: flex; flex-wrap: wrap; gap: 0.6rem 1.4rem; align-items: baseline; }
+.pubs-links p { color: var(--muted); font-size: 0.95rem; flex-basis: 100%; }
+
+/* People */
+.people { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.75rem 3rem; max-width: 46rem; }
+.people ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.55rem; }
+.people li { display: grid; }
+.people .name { font-weight: 500; }
+.people .note { color: var(--muted); font-size: 0.88rem; }
+.callout { background: var(--accent-soft); border-radius: 10px; padding: 1.25rem 1.4rem; max-width: 46rem; display: grid; gap: 0.6rem; }
+.callout h3 { font-family: var(--font-display); font-weight: 400; font-size: var(--step-1); }
+.callout p { font-size: 0.98rem; }
+.plain-list { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.35rem; }
+.plain-list li::marker { color: var(--accent); }
+.plain-list.nested { margin-top: 0.35rem; gap: 0.2rem; font-size: 0.95rem; }
+
+/* Contact */
+.contact { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem 3rem; max-width: 46rem; }
+.email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+.email { font-family: var(--font-mono); font-size: 0.95rem; user-select: all; overflow-wrap: anywhere; }
+.copy { font: inherit; font-size: 0.82rem; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 5px; padding: 0.2rem 0.6rem; cursor: pointer; }
+.copy:hover { border-color: var(--accent); color: var(--accent); }
+address { font-style: normal; color: var(--muted); }
+/* Placeholder for links that do not exist yet: swap the span for an <a> when the page is live */
+.soon { border-bottom: 1px dashed var(--muted); }
+.soon-tag { font-family: var(--font-mono); font-size: 0.72rem; color: var(--muted); margin-left: 0.3rem; }
+.link-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.35rem; }
+
+footer { border-top: 1px solid var(--line); padding-block: 2rem 2.5rem; color: var(--muted); font-size: 0.85rem; }
+footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+
+@media (max-width: 900px) {
+  .themes, .two-col { grid-template-columns: minmax(0, 1fr); }
+  .theme.wide .subs { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 760px) {
+  .hero .wrap { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .collage { max-width: 30rem; }
+  .beyond { grid-template-columns: minmax(0, 1fr); }
+  .beyond-photos { max-width: 24rem; }
+  section.block > .wrap { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; }
+  .rail h2 { position: static; }
+  .bar-name { display: none; }
+  .bar ul { justify-content: flex-start; }
+  .contact { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 520px) {
+  .people { grid-template-columns: minmax(0, 1fr); }
+  .timeline li { grid-template-columns: minmax(0, 1fr); gap: 0.1rem; }
+  .theme { padding: 1.1rem 1.1rem 0.8rem; }
+}
+</style>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="bar-name" href="#top">Ivonne Zavala</a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#group">Group</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#outreach">Outreach</a></li>
+        <li><a href="#join">Join us</a></li>
+        <li><a href="#beyond">Beyond physics</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Theoretical cosmology · Swansea University</p>
+      <h1>Ivonne Zavala</h1>
+      <svg class="chirp" viewBox="0 0 560 46" aria-hidden="true" focusable="false"><path d="{{CHIRP}}"/></svg>
+      <p class="lede">I am a theoretical physicist working on understanding the fundamental structure of the Universe. I want to understand how inflation, dark energy and dark matter can arise from a fundamental theory of gravity, and how cosmological data and gravitational waves can put those theories to the test.</p>
+      <ul class="tags" aria-label="Research areas">
+        <li>String cosmology</li>
+        <li>String phenomenology</li>
+        <li>Multifield inflation</li>
+        <li>Dark energy</li>
+        <li>Dark matter</li>
+        <li>Primordial gravitational waves</li>
+        <li>Machine learning for cosmology</li>
+      </ul>
+      <div class="cta">
+        <a class="btn primary" href="#research">Explore my research</a>
+        <a class="btn ghost" href="#join">Join the group</a>
+      </div>
+      <div class="news">
+        <span class="when">2026</span>
+        <p>Awarded a <b>Cátedra de la Diáspora Mexicana</b> (SECIHTI, Mexico). <a href="#mexico">Estudiantes en México: información aquí.</a></p>
+        <span class="when">2026</span>
+        <p><b>Eleanna Kolonia</b> joined my group as a PhD student with a <b>Bell Burnell Graduate Scholarship</b>, the first in Swansea Physics. <a href="https://www.iop.org/about/support-grants/bell-burnell-fund/2026-awardees/eleanna-kolonia">Read her interview.</a></p>
+        <span class="when">2025</span>
+        <p>Our 2024 paper <a href="https://arxiv.org/abs/2405.17396"><i>Cosmological constraints on curved quintessence</i></a> (JCAP) was selected by IOP Publishing as one of its <a href="https://publishingsupport.iopscience.iop.org/questions/celebrating-jisc-uk-research/">most impactful UK publications of 2024</a>.</p>
+      </div>
+    </div>
+    <figure class="portrait">
+      <div class="collage">
+        <img src="{{IMG:marina-2025.jpg}}" alt="The cosmology and gravitational waves group at Swansea Marina, April 2025" style="object-position: 50% 70%">
+        <img src="{{IMG:dinner-long-table.jpg}}" alt="Group dinner around a long table">
+        <img src="{{IMG:dinner-italian.jpg}}" alt="Group dinner in Swansea">
+      </div>
+      <figcaption>The cosmology and gravitational waves group in Swansea</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="rail"><h2>About</h2></div>
+    <div class="body">
+      <div class="prose">
+        <p>My research focuses on understanding the fundamental structure of the Universe. I want to understand the origin and evolution of the Universe and some of its biggest mysteries: what drove the accelerated expansion of the very early Universe (inflation), what drives the acceleration we see today (dark energy), and what dark matter is. My aim is to understand how these phenomena can be explained by a fundamental theory of gravity such as string theory.</p>
+        <p>I also want to find out whether, and how, such fundamental theories can be tested with the latest observations. That means cosmological data, and also gravitational waves, especially those of primordial origin. These will become accessible in the coming years with LISA (the Laser Interferometer Space Antenna) and the Einstein Telescope, and pulsar timing arrays such as NANOGrav are already probing them. To get there I use analytic and numerical techniques and, more recently, machine learning.</p>
+      </div>
+
+      <div>
+        <h3 class="sub-h">Collaborations</h3>
+        <ul class="collabs">
+          <li><a href="https://www.lisamission.org/">LISA Consortium</a><span>2024–</span></li>
+          <li><a href="https://einsteintelescope.eu/">Einstein Telescope</a><span>2021–</span></li>
+          <li><a href="https://www.eucapt.org/">EuCAPT</a><span>2022–</span></li>
+          <li><a href="https://cosmoversetensions.eu/">CosmoVerse, COST Action CA21136</a><span>2024–</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="research">
+  <div class="wrap">
+    <div class="rail"><h2>Research</h2></div>
+    <div class="body">
+      <figure class="figure">
+        <div class="diagram-scroll">
+          <svg class="diagram" viewBox="0 0 900 480" role="img" aria-labelledby="dg-title dg-desc">
+            <title id="dg-title">From string theory to observations</title>
+            <desc id="dg-desc">String theory at the top feeds three cosmological puzzles: inflation, dark matter and dark energy, placed along cosmic time. These connect to observations: gravitational waves from pulsar timing arrays, LISA and the Einstein Telescope, and cosmological data from the CMB, galaxy surveys and supernovae.</desc>
+            <defs>
+              <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="head-muted" d="M0,0 L10,5 L0,10 z"/></marker>
+              <marker id="ah-accent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path class="head-accent" d="M0,0 L10,5 L0,10 z"/></marker>
+            </defs>
+
+            <!-- Fundamental theory -->
+            <rect class="theory" x="40" y="16" width="820" height="80" rx="12"/>
+            <g transform="translate(108 56)"><ellipse class="torus" rx="36" ry="17"/><path class="torus" d="M-17,-2 Q0,9 17,-2"/><path class="torus" d="M-11,2 Q0,-5 11,2"/></g>
+            <g transform="translate(792 56)"><ellipse class="torus" rx="36" ry="17"/><path class="torus" d="M-17,-2 Q0,9 17,-2"/><path class="torus" d="M-11,2 Q0,-5 11,2"/></g>
+            <text class="t-display" x="450" y="50" font-size="23" text-anchor="middle">String theory</text>
+            <text class="t-muted" x="450" y="76" font-size="13" text-anchor="middle">extra dimensions · branes and fluxes · moduli · axions · symmetries</text>
+
+            <!-- Wires down to the puzzles -->
+            <path class="wire-accent" d="M170,96 V140" marker-end="url(#ah-accent)"/>
+            <path class="wire-accent" d="M450,96 V140" marker-end="url(#ah-accent)"/>
+            <path class="wire-accent" d="M730,96 V140" marker-end="url(#ah-accent)"/>
+
+            <!-- Puzzles -->
+            <rect class="node" x="60" y="142" width="220" height="64" rx="10"/>
+            <text class="t-display" x="170" y="170" font-size="18" text-anchor="middle">Inflation</text>
+            <text class="t-muted" x="170" y="192" font-size="12.5" text-anchor="middle">multifield, in the first instant</text>
+            <rect class="node" x="340" y="142" width="220" height="64" rx="10"/>
+            <text class="t-display" x="450" y="170" font-size="18" text-anchor="middle">Dark matter</text>
+            <text class="t-muted" x="450" y="192" font-size="12.5" text-anchor="middle">most of the matter in the Universe</text>
+            <rect class="node" x="620" y="142" width="220" height="64" rx="10"/>
+            <text class="t-display" x="730" y="170" font-size="18" text-anchor="middle">Dark energy</text>
+            <text class="t-muted" x="730" y="192" font-size="12.5" text-anchor="middle">acceleration today</text>
+
+            <!-- Cosmic time axis -->
+            <path class="axis" d="M50,250 H850" marker-end="url(#ah)"/>
+            <line class="tick" x1="170" y1="245" x2="170" y2="255"/>
+            <line class="tick" x1="730" y1="245" x2="730" y2="255"/>
+            <text class="t-muted" x="50" y="240" font-size="11.5">cosmic time</text>
+            <text class="t-muted" x="178" y="240" font-size="11.5">≈ 10⁻³⁶ s</text>
+            <text class="t-muted" x="738" y="240" font-size="11.5">today, 13.8 Gyr</text>
+
+            <!-- Wires down to observations -->
+            <path class="wire" d="M170,206 V308" marker-end="url(#ah)"/>
+            <text class="t-muted" x="178" y="282" font-size="11.5">primordial GWs, PBHs</text>
+            <path class="wire" d="M230,206 C300,262 560,262 610,306" marker-end="url(#ah)"/>
+            <text class="t-muted" x="388" y="282" font-size="11.5" text-anchor="middle">CMB imprints</text>
+            <path class="wire" d="M480,206 C510,250 600,270 640,306" marker-end="url(#ah)"/>
+            <path class="wire" d="M730,206 V308" marker-end="url(#ah)"/>
+            <text class="t-muted" x="738" y="282" font-size="11.5">expansion history</text>
+
+            <!-- Observations: gravitational waves -->
+            <rect class="obs" x="40" y="310" width="480" height="130" rx="12"/>
+            <text class="t-display" x="60" y="338" font-size="17">Gravitational waves</text>
+            <rect class="band" x="80" y="372" width="120" height="12" rx="6"/>
+            <rect class="band" x="240" y="372" width="100" height="12" rx="6"/>
+            <rect class="band" x="380" y="372" width="110" height="12" rx="6"/>
+            <text class="t-ink" x="140" y="364" font-size="12" text-anchor="middle">Pulsar timing arrays</text>
+            <text class="t-ink" x="290" y="364" font-size="12" text-anchor="middle">LISA</text>
+            <text class="t-ink" x="435" y="364" font-size="12" text-anchor="middle">Einstein Telescope</text>
+            <path class="axis" d="M70,400 H500" marker-end="url(#ah)"/>
+            <text class="t-cool" x="140" y="420" font-size="11.5" text-anchor="middle">nanohertz</text>
+            <text class="t-cool" x="290" y="420" font-size="11.5" text-anchor="middle">millihertz</text>
+            <text class="t-cool" x="435" y="420" font-size="11.5" text-anchor="middle">hertz</text>
+            <text class="t-muted" x="500" y="434" font-size="11" text-anchor="end">frequency</text>
+
+            <!-- Observations: cosmology -->
+            <rect class="obs" x="550" y="310" width="310" height="130" rx="12"/>
+            <text class="t-display" x="570" y="338" font-size="17">Cosmological data</text>
+            <text class="t-ink" x="570" y="368" font-size="12.5">Cosmic microwave background</text>
+            <text class="t-ink" x="570" y="392" font-size="12.5">Galaxy surveys (DESI, Euclid)</text>
+            <text class="t-ink" x="570" y="416" font-size="12.5">Supernovae</text>
+
+            <text class="t-muted" x="450" y="468" font-size="12.5" text-anchor="middle">Tools: analytic · numerical · machine learning and Bayesian inference</text>
+          </svg>
+        </div>
+        <figcaption>How my work fits together: string theory sets the possible dynamics of the early and late Universe, and gravitational waves and cosmological data decide which of them nature chose.</figcaption>
+      </figure>
+
+      <div class="themes">
+{{THEMES}}
+      </div>
+
+      <div class="pubs-links">
+        <p>The full, up-to-date list is on INSPIRE.</p>
+        <a href="https://inspirehep.net/authors/1049889">All publications on INSPIRE</a>
+        <a href="https://arxiv.org/search/?searchtype=author&amp;query=Zavala%2C+Ivonne">arXiv</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="group">
+  <div class="wrap">
+    <div class="rail"><h2>Group</h2></div>
+    <div class="body">
+      <div class="prose"><p>I am part of the <b><a href="https://swansea-cosmo-gravity.github.io/">Theoretical Cosmology and Gravity</a></b> group at Swansea, together with <a href="https://azadeh-maleknejad.pages.dev/">Azadeh Maleknejad</a> and <a href="https://g-tasinato.github.io/index.html">Gianmassimo Tasinato</a>.</p>
+        <p>Our group belongs to the <b>Centre for Quantum Fields and Gravity</b>, the theory group of the Physics Department, which runs a weekly <a href="https://www-pyseminar-rd4n.azurewebsites.net/">theory seminar</a>. We also run our own <a href="https://swansea-cosmo-gravity.github.io/#seminars">group seminars</a>, with talks from visitors and group members.</p></div>
+      <div class="people">
+        <div>
+          <h3 class="sub-h">PhD students</h3>
+          <ul>
+            <li><span class="name">Giulia Borghetto</span></li>
+            <li><span class="name">Aya Ghaleb</span></li>
+            <li><span class="name">Saba Rahimy</span></li>
+            <li><span class="name">Eleanna Kolonia</span><span class="note">First Bell Burnell Graduate Scholar in Swansea Physics</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="sub-h">Former postdocs</h3>
+          <ul>
+            <li><a class="name" href="https://inspirehep.net/authors/1844728">Ameek Malhotra</a><span class="note">2023 – 2026</span></li>
+            <li><a class="name" href="https://inspirehep.net/authors/1958930">Debika Chowdhury</a><span class="note">2020 – 2023</span></li>
+            <li><a class="name" href="https://inspirehep.net/authors/1297330">Ogan Özsoy</a><span class="note">2017 – 2019</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="sub-h">Former PhD students</h3>
+          <ul>
+            <li><span class="name">Roberta Chiovoloni</span><span class="note">PhD 2022</span></li>
+            <li><span class="name">Jonathan Holland</span><span class="note">PhD 2020</span></li>
+            <li><span class="name">Karta Kooner</span><span class="note">PhD 2018</span></li>
+            <li><span class="name">Dibya Chakraborty</span><span class="note">PhD 2021, Universidad de Guanajuato, co-supervised with Óscar Loaiza-Brito and Gustavo Niz</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="sub-h">Former visiting students</h3>
+          <ul>
+            <li><span class="name">Jagan Kaur</span><span class="note">Master's student, University of Padova, 2026</span></li>
+            <li><span class="name">Daniele Licciardello</span><span class="note">Master's student, University of Bologna, 2025</span></li>
+            <li><span class="name">Yessenia Olguín-Trejo</span><span class="note">PhD student, IF-UNAM, Mexico, 2018</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="photo-row">
+        <img class="wide" src="{{IMG:dinner-oct-2025-visit.jpg}}" alt="Group dinner during a visit, October 2025">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="events">
+  <div class="wrap">
+    <div class="rail"><h2>Conferences and workshops organised</h2></div>
+    <div class="body">
+      <ol class="timeline">
+        <li><span class="when">Jan 2026</span><span class="what"><b>Recent Progress in Computational String Geometry</b><span class="where">BIRS–CMI, Chennai, India</span></span></li>
+        <li><span class="when">Apr 2022</span><span class="what"><b>Bethe Forum on Inflation</b><span class="where">Bethe Center for Theoretical Physics, Bonn, Germany</span></span></li>
+        <li><span class="when">May 2019</span><span class="what"><b>Geometrical Tools for String Cosmology</b><span class="where">BIRS–CMO, Oaxaca, Mexico</span></span></li>
+        <li><span class="when">May 2018</span><span class="what"><b>UK Cosmo Meeting</b><span class="where">Swansea University, UK</span></span></li>
+        <li><span class="when">Sep 2016</span><span class="what"><b>String Inflation After Planck</b><span class="where">Liverpool, UK</span></span></li>
+        <li><span class="when">Jul 2016</span><span class="what"><b>School and Workshop on String Phenomenology and Cosmology</b><span class="where">Sichuan University, Chengdu, China</span></span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="teaching">
+  <div class="wrap">
+    <div class="rail"><h2>Teaching</h2></div>
+    <div class="body">
+      <div class="two-col">
+        <div>
+          <h3 class="sub-h">At Swansea</h3>
+          <ol class="timeline">
+            <li><span class="when">Current</span><span class="what"><b>Special Relativity</b><span class="where">First-year module: design and delivery</span></span></li>
+            <li><span class="when">Current</span><span class="what"><b>The Gravitational Universe: Black Holes and Gravitational Waves</b><span class="where">Fourth-year module: design and delivery</span></span></li>
+            <li><span class="when">Current</span><span class="what"><b>Theoretical Physics and Astrophysics</b></span></li>
+            <li><span class="when">Earlier</span><span class="what"><b>Particle Physics I</b>, Waves, Optics and Thermal Physics, Bulk and Thermal Physics, third-year laboratory</span></li>
+          </ol>
+        </div>
+        <div>
+          <h3 class="sub-h">Invited lectures</h3>
+          <ol class="timeline">
+            <li><span class="when">2024</span><span class="what"><b>Lectures on Cosmology</b><span class="where">Dutch Research School of Theoretical Physics (DRSTP), Wageningen</span></span></li>
+            <li><span class="when">2022</span><span class="what"><b>Mathematical Methods for Physics</b><span class="where">Guest lecturer, University of Bologna, Italy</span></span></li>
+            <li><span class="when">2018</span><span class="what"><b>Lectures on String Cosmology</b><span class="where">Mitchell Institute, Texas A&amp;M University, USA</span></span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="outreach">
+  <div class="wrap">
+    <div class="rail"><h2>Outreach and equality</h2></div>
+    <div class="body">
+      <ol class="timeline">
+        <li><span class="when">2021</span><span class="what"><b>Interview on dark matter</b><span class="where">BBC Science Café, Radio Wales</span></span></li>
+        <li><span class="when">2017</span><span class="what"><b>Dark Matter Day, Swansea</b><span class="where">Main organiser. Covered by S4C’s <a href="https://www.facebook.com/PrynhawnDaS4C/videos/1563095470424287/">Prynhawn Da</a></span></span></li>
+        <li><span class="when">2016</span><span class="what"><b><a href="https://soapboxscience.org/soapbox-science-2016-swansea/">Soapbox Science Swansea</a></b><span class="where">Street science talk</span></span></li>
+        <li><span class="when">2016</span><span class="what"><b>Swansea and Bridgend astronomical societies</b><span class="where">Invited public talks</span></span></li>
+      </ol>
+      <div class="callout">
+        <h3>Opening doors to physics</h3>
+        <p>Making physics open to everyone matters to me. I am proud to supervise Eleanna Kolonia, the first Bell Burnell Graduate Scholar in Swansea Physics. The scholarship, created by Dame Jocelyn Bell Burnell through the Institute of Physics, supports PhD students from groups that are under-represented in physics.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="join">
+  <div class="wrap">
+    <div class="rail"><h2>Join us</h2></div>
+    <div class="body">
+      <div class="prose">
+        <p>We welcome PhD students, postdocs and visitors who want to work on string cosmology, string phenomenology, dark energy or gravitational waves. When we have funded positions in the Theoretical Cosmology and Gravity group we advertise them on <a href="https://inspirehep.net/jobs">INSPIRE Jobs</a>.</p>
+        <p>We are also glad to host researchers who bring their own funding, and to help strong candidates prepare fellowship applications with Swansea as host. Get in touch early, ideally a few months before the deadline.</p>
+      </div>
+      <div class="two-col">
+        <div>
+          <h3 class="sub-h">PhD students</h3>
+          <ul class="plain-list">
+            <li>STFC-funded PhD studentships at Swansea</li>
+            <li>Bell Burnell Graduate Scholarship Fund (Institute of Physics)</li>
+            <li>Scholarships for international students, for example:
+              <ul class="plain-list nested">
+                <li><a href="https://www.onassis.org/open-calls-past/onassis-foundation-scholarships-call-for-the-academic-year-2026-27">Onassis Foundation Scholarships</a> (Greece)</li>
+                <li><a href="https://www.inlaksfoundation.org/">Inlaks Shivdasani Foundation Scholarships</a> (India)</li>
+                <li><a href="https://cscuk.fcdo.gov.uk/">Commonwealth Scholarships</a> (Commonwealth countries)</li>
+                <li><a href="https://secihti.mx/becas-al-extranjero/">SECIHTI scholarships for study abroad</a> (Mexico)</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="sub-h">Postdocs and fellows</h3>
+          <ul class="plain-list">
+            <li>Marie Skłodowska-Curie Postdoctoral Fellowships</li>
+            <li>STFC Ernest Rutherford Fellowships</li>
+            <li>Royal Society University Research and Newton International Fellowships</li>
+            <li>Leverhulme Early Career Fellowships</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout" id="mexico" lang="es">
+        <h3>Para estudiantes e investigadores en México</h3>
+        <p>La Cátedra de la Diáspora Mexicana abre un camino para fortalecer la colaboración entre Swansea y México. Me interesa mucho colaborar con grupos en México y explorar proyectos conjuntos, estancias e intercambios. Si eres estudiante de posgrado o investigador y te interesa trabajar conmigo, escríbeme y vemos juntos qué opciones hay. Las estancias en Swansea normalmente requieren financiamiento propio, por ejemplo una beca de SECIHTI para estudios en el extranjero.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="beyond">
+  <div class="wrap">
+    <div class="rail"><h2>Beyond physics</h2></div>
+    <div class="body">
+      <div class="beyond">
+        <div class="prose">
+          <p>Outside physics you will often find me upside down: in a gym in Swansea, or anywhere with a bar to hang from, airports included. Gymnastics has been my passion for as long as I can remember. I train at the Swansea Gymnastics Club and do acrobatics at Buzz Trampoline Park in Swansea.</p>
+          <p>If you are a visitor who also enjoys flips and handstands, ask me where to train.</p>
+        </div>
+        <figure class="beyond-photos">
+          <img src="{{IMG:tallinn.jpg}}" alt="Ivonne hanging upside down from a climbing frame at Tallinn Airport">
+          <img src="{{IMG:bar-handstand.jpg}}" alt="Ivonne in a handstand on the bar at gymnastics training">
+          <figcaption>Tallinn Airport, and a handstand on the bar</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="rail"><h2>Contact</h2></div>
+    <div class="body">
+      <div class="contact">
+        <div>
+          <h3 class="sub-h">Email</h3>
+          <div class="email-row">
+            <span class="email" id="email">e.i.zavalacarrasco [at] swansea.ac.uk</span>
+            <button class="copy" id="copy-email" type="button">Copy</button>
+          </div>
+          <h3 class="sub-h" style="margin-top:1.5rem">Address</h3>
+          <address>Department of Physics<br>Swansea University, Singleton Park<br>Swansea SA2 8PP, UK</address>
+        </div>
+        <div>
+          <h3 class="sub-h">Elsewhere</h3>
+          <ul class="link-list">
+            <li><a href="https://inspirehep.net/authors/1049889">INSPIRE</a></li>
+            <li><a href="https://arxiv.org/search/?searchtype=author&amp;query=Zavala%2C+Ivonne">arXiv</a></li>
+            <li><a href="https://www-pyseminar-rd4n.azurewebsites.net/">Swansea theory seminar</a></li>
+            <li><a href="https://swansea-cosmo-gravity.github.io/">Theoretical Cosmology and Gravity group</a></li>
+            <li><a href="https://swansea-cosmo-gravity.github.io/#seminars">Group seminars</a></li>
+            <li><a href="https://azadeh-maleknejad.pages.dev/">Azadeh Maleknejad</a></li>
+            <li><a href="https://g-tasinato.github.io/index.html">Gianmassimo Tasinato</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Ivonne Zavala · Swansea University</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('copy-email');
+  var email = document.getElementById('email');
+  if (!btn || !email) return;
+  btn.addEventListener('click', function () {
+    var text = ['e.i.zavalacarrasco', 'swansea.ac.uk'].join(String.fromCharCode(64));
+    function selectIt() {
+      var r = document.createRange(); r.selectNodeContents(email);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      btn.textContent = 'Selected';
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () { btn.textContent = 'Copied'; }, selectIt);
+    } else { selectIt(); }
+    setTimeout(function () { btn.textContent = 'Copy'; }, 2000);
+  });
+})();
+</script>
