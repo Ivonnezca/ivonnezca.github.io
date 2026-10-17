@@ -76,6 +76,9 @@ p { margin: 0; }
 .hero { padding-block: 3.5rem 2.5rem; }
 .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 22rem; gap: 3rem; align-items: start; }
 .eyebrow { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.name-row { display: flex; align-items: center; gap: 1.25rem; margin-top: 0.6rem; }
+.name-row h1 { margin-top: 0; }
+.avatar { width: clamp(4.5rem, 9vw, 6.5rem); height: auto; aspect-ratio: 1; border-radius: 50%; object-fit: cover; flex: none; border: 3px solid var(--accent-soft); box-shadow: 0 0 0 1px var(--line); }
 .hero h1 { font-family: var(--font-display); font-weight: 400; font-size: var(--step-4); line-height: 1.02; margin-top: 0.6rem; letter-spacing: -0.01em; }
 .chirp { display: block; width: 100%; max-width: 35rem; height: auto; margin-top: 1rem; }
 .chirp path { fill: none; stroke: var(--accent); stroke-width: 1.6; stroke-linejoin: round; }
@@ -268,7 +271,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <div class="wrap">
     <div>
       <p class="eyebrow">Theoretical cosmology · Swansea University</p>
-      <h1>Ivonne Zavala</h1>
+      <div class="name-row">
+        <img class="avatar" src="{{IMG:portrait-round.jpg}}" alt="Ivonne Zavala">
+        <h1>Ivonne Zavala</h1>
+      </div>
       <svg class="chirp" viewBox="0 0 560 46" aria-hidden="true" focusable="false"><path d="{{CHIRP}}"/></svg>
       <p class="lede">I am a theoretical physicist working on understanding the fundamental structure of the Universe. I want to understand how inflation, dark energy and dark matter can arise from a fundamental theory of gravity, and how cosmological data and gravitational waves can put those theories to the test.</p>
       <ul class="tags" aria-label="Research areas">
